@@ -4,6 +4,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import com.gyanu.algo.BitOperator;
+
 class BinaryTesting {
 
 	@Test
@@ -18,30 +20,29 @@ class BinaryTesting {
 		assertEquals(-8, -4 << 1);
 		assertNotEquals(8, -4 << 1);
 		assertNotEquals(4, -8 >> 1);
+		assertEquals("11111111111111111111111111111110", Integer.toBinaryString(-32 >> 4));
 	}
 
 	@Test
 	public void logicalShift() {
-		assertEquals(4, -32 >>> 3);
-		assertNotEquals(-4, -32 >>> 3);
+		assertEquals("1111", Integer.toBinaryString(-32 >>> 28));
 	}
 
 	@Test
-	public void createMask() {
-
+	public void clearBitAt() {
+		assertEquals("100000", BitOperator.clearBitAt(Integer.parseInt("101000", 2), 4));
+		assertEquals("1011", BitOperator.clearBitAt(Integer.parseInt("1111", 2), 3));
 	}
 
 	@Test
-	public void flipBit() {
-
+	public void setBitAt() {
+		assertEquals("101000", BitOperator.setBitAt(Integer.parseInt("100000", 2), 4));
+		assertEquals("1111", BitOperator.setBitAt(Integer.parseInt("1011", 2), 3));
 	}
 
 	@Test
 	public void flipLowestBit() {
-		assertEquals(4, flipLowestBit(6));
-	}
-	
-	public static int flipLowestBit(int num) {
-		return num & (num-1);
+		assertEquals("100", BitOperator.flipLowestBit(6));
+		assertEquals("101000", BitOperator.flipLowestBit(44));
 	}
 }

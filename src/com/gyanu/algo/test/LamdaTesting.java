@@ -36,7 +36,7 @@ class LamdaTesting {
 	// reduce
 	@Test
 	public void reduce() {
-		assertEquals(2*25*26, IntStream.rangeClosed(1, 100).filter(a -> a%4 == 0).reduce(0,(a, b) -> a+b));
+		assertEquals(2 * 25 * 26, IntStream.rangeClosed(1, 100).filter(a -> a % 4 == 0).reduce(0, (a, b) -> a + b));
 	}
 
 	// collect
@@ -44,7 +44,8 @@ class LamdaTesting {
 	// prime number
 	@Test
 	public void primeNumbers100() {
-		int[] primes = IntStream.rangeClosed(1, 100).filter(a -> a%2 != 0).filter(a->a%3 !=0).filter(a->a%5!=0).filter(a->a%7!=0).toArray();
+		int[] primes = IntStream.rangeClosed(1, 100).filter(a -> a % 2 != 0).filter(a -> a % 3 != 0)
+				.filter(a -> a % 5 != 0).filter(a -> a % 7 != 0).toArray();
 		Stream.of(primes).forEach(System.out::println);
 		System.out.println(Arrays.toString(primes));
 	}
