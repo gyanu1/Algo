@@ -9,9 +9,8 @@ public class BitOperator {
 //
 //	}
 
-	public static String clearBitAt(int n, int position) {
-		int mask = ~0 << position;
-		mask = mask | ((1 << position - 1) - 1);
+	public static String clearBitAt(int n, int position) {	
+		int mask = ~(1 << position - 1);
 		return Integer.toBinaryString(n & mask);
 	}
 
