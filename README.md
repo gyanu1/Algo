@@ -1,3 +1,4 @@
 # Algo
-pragramming practice
-learnign algorithm and datasturcture
+programming practice
+
+learning algorithm and data structure
