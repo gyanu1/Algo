@@ -1,4 +1,4 @@
-package com.gyanu.algo.test;
+package com.gyanu.algo;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;

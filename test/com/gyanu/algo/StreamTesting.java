@@ -1,4 +1,4 @@
-package com.gyanu.algo.test;
+package com.gyanu.algo;
 
 public class StreamTesting {
 
