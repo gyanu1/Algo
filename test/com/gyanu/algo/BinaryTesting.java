@@ -63,4 +63,30 @@ class BinaryTesting {
 		assertEquals(true, (4&1)==0, "even number");
 		assertEquals(true, (5&1)==1, "odd number");
 	}
+	
+	@Test
+	public void readBytesFromNumbers() {
+		int bytes = 0xFF;
+		assertEquals(255, bytes);
+		long bytesl = 0xFE;
+		assertEquals(254, bytesl);
+		assertEquals(Integer.parseInt("00011111", 2), Integer.parseInt("110111111010011100011111", 2)&0x0000FF);
+		assertEquals(Integer.parseInt("10100111", 2), (Integer.parseInt("10111111010011100011111", 2)&0x00FF00)>>8);	
+	}
+	
+	@Test
+	public void reverseBitsOfNumber() {
+		int length = 31;
+		int num = 0xAA;
+		int reverse = 0;
+		while(num>0) {
+			num =num>>1;
+			if((num & 1) ==1) {
+				reverse|=(1<<length);
+			}
+			length--;
+		}
+		System.out.println(Integer.toBinaryString(reverse));
+		assertEquals(0xAA000000,reverse);
+	}
 }
